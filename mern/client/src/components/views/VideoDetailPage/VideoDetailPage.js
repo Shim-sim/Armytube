@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Row, Col, List, Avatar } from 'antd'
 import axios from 'axios'
+import SideVideo from './Sections/SideVideo'
 
 function VideoDetailPage(props) {
+	console.log(props)
 	
 	const videoId = props.match.params.videoId
 	const variable = { videoId: videoId }
@@ -29,15 +31,15 @@ function VideoDetailPage(props) {
 				<Col lg={18} xs={24}>
 					
 				<div style={{ width: '100%', padding:'3rem 4rem' }}>
-					<video style={{ width:'100%' }} src={'logo-og.png'}/> {/*src 자리에 filePath가 들어가야함 */}
+					<img style={{ width: '100%' }} alt="videoDeatil" src={'/assets/logo-og.png'}/> {/*src 자리에 filePath가 들어가야함 */}
 						<List.Item
 							actions
 						>
 							
 							<List.Item.Meta
 								avatar={<Avatar src={VideoDetail.writer.image} />}
-								title
-								description
+								title={VideoDetail.writer.name}
+								description={VideoDetail.description}
 							/>
 
 						</List.Item>
@@ -51,7 +53,7 @@ function VideoDetailPage(props) {
 					
 				</Col>
 				<Col lg={6} xs={24}>
-					Side Video
+					<SideVideo />
 				</Col>
 			</Row>
 	)

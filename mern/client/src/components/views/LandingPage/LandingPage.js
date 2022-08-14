@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { FaCode } from "react-icons/fa";
-import { Card, Icon, Avatar, Col, Typography, Row } from 'antd';
+import { Card, Avatar, Col, Typography, Row } from 'antd';
 import axios from 'axios';
 import moment from 'moment';
 const { Title } = Typography
@@ -12,14 +12,14 @@ function LandingPage() {
 	
   useEffect(() => {
 		axios.get('/api/video/getVideos')
-			.then(response => {
-				if (response.data.success) {
-					console.log(response.data.videos)
-					setVideos(response.data.videos)
-				} else {
-						alert('비디오 가져오기를 실패 했습니다.')
-					}
-				})
+		.then(response => {
+			if (response.data.success) {
+				console.log(response.data.videos)
+				setVideos(response.data.videos)
+			} else {
+					alert('비디오 가져오기를 실패 했습니다.')
+				}
+			})
 	}, [])
 	
 	 const renderCards = Videos.map((video, index) => {

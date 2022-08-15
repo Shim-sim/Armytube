@@ -21,14 +21,14 @@ function ReplyComment(props) {
 	
 let renderReplyComment = (parentCommentId) =>
 	props.commentLists.map((comment, index) => (
-		<React.Fragment>
+		<>
 			{comment.responseTo === parentCommentId &&
 				<div style={{ width: '80%', marginLeft: '40px' }}>
 					<SingleComment comment={comment} postId={props.videoId} refreshFunction={props.refreshFunction} />
 					<ReplyComment commentLists={props.commentLists} parentCommentId={comment._id} postId={props.videoId} refreshFunction={props.refreshFunction} />
 				</div>
 			}
-		</React.Fragment>
+		</>
 	))
 	
 	 const handleChange = () => {

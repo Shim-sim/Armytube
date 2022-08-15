@@ -36,9 +36,8 @@ function Comment(props) {
 	
 	return (
 		<div>
-			<br />
-			<p>Replies</p>
-			<br />
+			<h3 style={{borderBottom:'1px solid rgba(128 128 128 / 60%)',
+					width: "90%", paddingBottom:'10px' }}>댓글</h3>
 			
 			{/* Coment Lists */}			
 			{props.commentLists && props.commentLists.map((comment, index)=>(

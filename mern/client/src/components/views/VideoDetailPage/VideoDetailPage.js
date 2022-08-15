@@ -4,6 +4,7 @@ import axios from 'axios'
 import SideVideo from './Sections/SideVideo'
 import Subscribe from './Sections/Subscribe'
 import Comment from './Sections/Comment'
+import LikeDislikes from './Sections/LikeDislikes'
 
 function VideoDetailPage(props) {
 	
@@ -52,7 +53,7 @@ function VideoDetailPage(props) {
 				<div style={{ width: '100%', padding:'3rem 4rem' }}>
 					<img style={{ width: '100%' }} alt="videoDeatil" src={'/assets/logo-og.png'}/> {/*src 자리에 filePath가 들어가야함 */}
 						<List.Item
-							actions={[subcribeButton]}
+							actions={[ <LikeDislikes videoId={videoId} userId={localStorage.getItem('userId')}/>, subcribeButton] }
 						>
 							
 							<List.Item.Meta
